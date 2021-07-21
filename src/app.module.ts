@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import {MongooseModule} from '@nestjs/mongoose';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { DB_URI, APP_NAME, MAIL_PASSWORD, MAIL_USER } from "./config";
+import * as path from 'path';
+import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 
 @Module({
   imports: [MongooseModule.forRoot(DB_URI, {useNewUrlParser: true, useUnifiedTopology: true}),
